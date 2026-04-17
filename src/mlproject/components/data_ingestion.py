@@ -28,7 +28,7 @@ class DataInjection:
             os.makedirs("artifacts", exist_ok=True)
             df.to_csv(self.injection_config.raw_data_path, header=True, index=False)
 
-            test_data, train_data = train_test_split(df, test_size=0.2, random_state=42)
+            train_data, test_data = train_test_split(df, test_size=0.2, random_state=42)
             train_data.to_csv(self.injection_config.train_data_path, index=False, header=True)
             test_data.to_csv(self.injection_config.test_data_path, index=False, header=True)
             
